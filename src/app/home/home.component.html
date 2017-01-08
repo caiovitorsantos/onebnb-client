@@ -1,0 +1,14 @@
+<table>
+	<thead>
+		<tr>
+			<th data-field="name">Title</th>
+			<th data-field="name">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let p of properties">
+			<td> {{ p.title }} </td>
+			<td> {{ p.description }} </td>
+		</tr>
+	</tbody>
+</table>
