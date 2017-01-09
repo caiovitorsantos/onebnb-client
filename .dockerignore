@@ -1,1 +1,9 @@
+<<<<<<< HEAD
 /node_modules
+=======
+.git
+.dockerignore
+.byebug_history
+/log/*
+/tmp/*
+>>>>>>> a50ef2c44078729a238abd9a7f1c9ae193bf4386
