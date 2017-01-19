@@ -1,14 +1,162 @@
-<table>
-	<thead>
-		<tr>
-			<th data-field="name">Title</th>
-			<th data-field="name">Description</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr *ngFor="let p of properties">
-			<td> {{ p.title }} </td>
-			<td> {{ p.description }} </td>
-		</tr>
-	</tbody>
-</table>
+
+<div class="home">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="row home-search">
+      <div class="row">
+        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/XKWr3XFI1YQ?showinfo=0&amp;controls=0" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="row">
+        <form>
+          <div class="form-group">
+            <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="Local">
+            </div>
+            <div class="col-md-2">
+              <input type="date" class="form-control" placeholder="Check-in">
+            </div>
+            <div class="col-md-2">
+              <input type="date" class="form-control" placeholder="Check-out">
+            </div>
+            <div class="col-md-2">
+              <select class="form-control" placeholder="Hospedes">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <button class="btn btn-success-custom">BUSCAR</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row home-recommended">
+      <div class="row recommended-title">
+        <h4>Recomendados</h4>
+      </div>
+      <div class="row">
+        <div class="col-md-4 property-indication-box">
+          <div class="property-indication-image">
+            <a href="/">
+              <img src="http://res.cloudinary.com/dgrvu0qjy/image/upload/v1484321654/anuncio1_c0f8lv.jpg" class="img-responsive">
+            </a>
+          </div>
+          <div class="property-indication-price">
+            <span class="property-price">R$120</span>
+            <span class="property-title">Conforto em Ouro Preto</span>
+          </div>
+          <div class="property-indication-reviews">
+            <div class="col-md-6 text-left stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </div>
+            <div class="col-md-6 text-left reviews-link text-left">
+              <span class="reviews-link"><a href="/">34 Comentários</a></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 property-indication-box">
+          <div class="property-indication-image">
+            <a href="/">
+              <img src="http://res.cloudinary.com/dgrvu0qjy/image/upload/v1484321654/anuncio2_xzvqlc.jpg" class="img-responsive">
+            </a>
+          </div>
+          <div class="property-indication-price">
+            <span class="property-price">R$120</span>
+            <span class="property-title">Conforto em Ouro Preto</span>
+          </div>
+          <div class="property-indication-reviews">
+            <div class="col-md-6 text-left stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </div>
+            <div class="col-md-6 text-left reviews-link text-left">
+              <span class="reviews-link"><a href="/">34 Comentários</a></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 property-indication-box">
+          <div class="property-indication-image">
+            <a href="/">
+              <img src="http://res.cloudinary.com/dgrvu0qjy/image/upload/v1484321654/anuncio3_r2det2.jpg" class="img-responsive">
+            </a>
+          </div>
+          <div class="property-indication-price">
+            <span class="property-price">R$120</span>
+            <span class="property-title">Conforto em Ouro Preto</span>
+          </div>
+          <div class="property-indication-reviews">
+            <div class="col-md-6 text-left stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </div>
+            <div class="col-md-6 text-left reviews-link text-left">
+              <span class="reviews-link"><a href="/">34 Comentários</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <hr>
+    </div>
+    <div class="row home-explore hidden-xs hidden-sm">
+      <div class="row explore-title">
+        <h4>Explore o Mundo</h4>
+      </div>
+      <div class="row explore-box">
+        <div class="col-md-3 col-xs-12">
+          <div class="row">
+            <a href="/">
+              <img src="http://res.cloudinary.com/dgrvu0qjy/image/upload/v1484321652/img-paris_ilhftm.jpg" class="img-responsive explore-height-half">
+            </a>
+          </div>
+          <div class="row vertical-gap">
+            <a href="/">
+              <img src="http://res.cloudinary.com/dgrvu0qjy/image/upload/v1484321653/img-amsterdam_imi7tw.jpg" class="img-responsive explore-height-half">
+            </a>
+          </div>
+        </div>
+        <div class="col-md-3 col-xs-12">
+          <div class="">
+            <a href="/">
+              <img src="http://res.cloudinary.com/dgrvu0qjy/image/upload/v1484321653/img-roma_u3ecud.jpg" class="img-responsive explore-height-full">
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-xs-12">
+          <div class="row">
+            <div class="col-md-6">
+              <a href="/">
+                <img src="http://res.cloudinary.com/dgrvu0qjy/image/upload/v1484321652/img-londres_hcbarz.jpg" class="img-responsive explore-height-half">
+              </a>
+            </div>
+ 
+            <div class="col-md-6 col-xs-12">
+              <a href="/">
+                <img src="http://res.cloudinary.com/dgrvu0qjy/image/upload/v1484321653/img-tokyo_n88pzr.jpg" class="img-responsive explore-height-half">
+              </a>
+            </div>
+          </div>
+          <div class="vertical-gap">
+            <a href="/">
+              <img src="http://res.cloudinary.com/dgrvu0qjy/image/upload/v1484321653/img-riodejaneiro_tsibbu.jpg" class="img-responsive explore-height-half">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

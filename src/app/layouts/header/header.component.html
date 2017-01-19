@@ -1,0 +1,46 @@
+<nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" (click)="isMenuCollapsed = !isMenuCollapsed" data-toggle="collapse" data-target=".navbar-collapse">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+    <a class="navbar-brand" href="/">Logo</a>
+  </div>
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" class="collapse navbar-collapse" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isMenuCollapsed">
+    <form class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="BUSCAR">
+      </div>
+    </form>
+    <ul class="nav navbar-nav">
+      <li><a href="/">TORNE-SE UM ANFITRIÃO</a></li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li><a href="/">AJUDA</a></li>
+    </ul>
+    <div *ngIf="_tokenService.currentUserData == null">
+      <ul class="nav navbar-nav" dropdown (onToggle)="toggled($event)">
+        <li><a href="/" dropdownToggle>ENTRAR</a></li>
+        <ul class="dropdown-menu login-box" dropdownMenu aria-labelledby="simple-dropdown">
+          <app-login></app-login>
+        </ul>
+      </ul>
+      <ul class="nav navbar-nav" dropdown (onToggle)="toggled($event)">
+        <li><a href="/" dropdownToggle>CADASTRE-SE</a></li>
+        <ul class="dropdown-menu register-box" dropdownMenu aria-labelledby="simple-dropdown">
+          <app-register></app-register>
+        </ul>
+      </ul>
+    </div>
+    <div *ngIf="_tokenService.currentUserData != null">
+      <ul class="nav navbar-nav">
+        <li><a href (click)="signOut()">SAIR</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- /.navbar-collapse -->
+</nav>

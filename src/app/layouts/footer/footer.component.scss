@@ -1,0 +1,34 @@
+@import "src/styles.scss";
+
+.footer{
+	background-color: $template-color-4;
+	color: $template-color-6;
+	height: 305px;
+	margin-top: 53px;
+
+	.footer-top{
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+
+	.footer-middle{
+		margin-top: 10px;;
+	}
+
+	.footer-bottom{
+		margin-bottom: 20px;
+
+		.social-icons{
+			margin-top: 5px;
+			margin-bottom: 15px;
+		}
+	}
+
+	a{
+		color: $template-color-6;
+	}
+
+	select{
+		color: $template-color-4;
+	}
+}
