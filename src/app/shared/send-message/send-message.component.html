@@ -1,0 +1,21 @@
+<button type="button" class="btn btn-success-custom" (click)="staticModal.show()">Enviar Mensagem</button>
+ 
+<div class="modal fade" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        Enviar Mensagem!
+        <button type="button" class="close pull-right" aria-label="Close" (click)="staticModal.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <textarea class="send-message-text"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success-custom pull-right">Enviar</button>
+      </div>
+    </div>
+  </div>
+</div>

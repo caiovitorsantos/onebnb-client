@@ -1,0 +1,19 @@
+@import "src/styles.scss";
+
+.reservation-box{
+	margin-top: 40px;
+
+	.search{
+		margin-top: 20px;
+		padding-right: 0;
+		padding-left: 0;	
+	}
+
+	.results{
+		margin-top: 40px;
+	}
+
+	.reserve{
+		margin-top: 20px;
+	}
+}

@@ -1,0 +1,69 @@
+<div class="reservation-box">
+  <div class="col-md-12">
+    <div class="form-group">
+      <div class="col-md-6">
+        <div class="input-group" dropdown dropdown-append-to-body [autoClose]="'outsideClick'">
+          <input type="text" class="form-control" name="inputBeginDate" [value]="begindate" />
+          <span class="input-group-addon" dropdownToggle><i class="fa fa-calendar"></i></span>
+          <div class="dropdown-menu" role="menu" aria-labelledby="btn-append-to-body">
+            <datepicker name="test" [showWeeks]="false" [(ngModel)]="begindate"></datepicker>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="input-group" dropdown dropdown-append-to-body [autoClose]="'outsideClick'">
+          <input type="text" class="form-control" name="inputBeginDate" [value]="enddate" />
+          <span class="input-group-addon" dropdownToggle><i class="fa fa-calendar"></i></span>
+          <div class="dropdown-menu" role="menu" aria-labelledby="btn-append-to-body">
+            <datepicker name="test" [showWeeks]="false" [(ngModel)]="enddate"></datepicker>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 search">
+      <div class="col-md-6">
+        <select class="form-control col-md-12" placeholder="Hospedes" (change)="filter('guests', $event.target.value)">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <button class="btn btn-success col-md-12">BUSCAR</button>
+      </div>
+    </div>
+    <div class="col-md-12 results">
+      <div class="row">
+        <div class="col-md-6">
+          R$160 x 2 diárias
+        </div>
+        <div class="col-md-6 text-right">
+          R$320
+        </div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-6">
+          Taxa de serviço
+        </div>
+        <div class="col-md-6 text-right">
+          R$63
+        </div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-6">
+          <b>Total</b>
+        </div>
+        <div class="col-md-6 text-right">
+          <b>R$383</b>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 reserve">
+      <button class="btn btn-success-custom col-md-12">RESERVAR</button>
+    </div>
+  </div>
+</div>

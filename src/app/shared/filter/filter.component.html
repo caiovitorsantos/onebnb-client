@@ -1,0 +1,78 @@
+<div class="home">
+  <div class="row">
+    <div class="form-group">
+      <div class="col-md-4">
+        <div class="input-group" dropdown dropdown-append-to-body [autoClose]="'outsideClick'">
+          <input type="text" class="form-control" name="inputBeginDate" [value]="beginDate" />
+          <span class="input-group-addon" dropdownToggle><i class="fa fa-calendar"></i></span>
+          <div class="dropdown-menu" role="menu" aria-labelledby="btn-append-to-body">
+            <datepicker name="test" [showWeeks]="false" [(ngModel)]="beginDate" (ngModelChange)="filter('beginDate', $event.toLocaleDateString())"></datepicker>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="input-group" dropdown dropdown-append-to-body [autoClose]="'outsideClick'">
+          <input type="text" class="form-control" name="inputBeginDate" [value]="endDate" />
+          <span class="input-group-addon" dropdownToggle><i class="fa fa-calendar"></i></span>
+          <div class="dropdown-menu" role="menu" aria-labelledby="btn-append-to-body">
+            <datepicker name="test" [showWeeks]="false" [(ngModel)]="endDate" (ngModelChange)="filter('endDate', $event.toLocaleDateString())"></datepicker>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <select class="form-control" placeholder="Hospedes" (change)="filter('guests', $event.target.value)">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row accomodation-type">
+    <div class="col-md-12">
+      <div class="col-md-3">
+        <p><b>Tipo de Acomodação</b></p>
+      </div>
+      <div class="col-md-3">
+        <div class="row">
+          <i class="fa fa-home fa-3 filter-icons" aria-hidden="true"></i>
+        </div>
+        <div class="row">
+          <input type="checkbox" (change)="filter('wholehouse', $event.target.checked)"> Casa Inteira
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="row">
+          <i class="fa fa-user fa-3 filter-icons" aria-hidden="true"></i>
+        </div>
+        <div class="row">
+          <input type="checkbox" (change)="filter('wholebedroom', $event.target.checked)"> Quarto Inteiro
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="row">
+          <i class="fa fa-users fa-5 filter-icons" aria-hidden="true"></i>
+        </div>
+        <div class="row">
+          <input type="checkbox" (change)="filter('sharedhouse', $event.target.checked)"> Quarto Compartilhado
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row accomodation-price">
+    <div class="col-md-12">
+      <div class="col-md-3">
+        <p><b>Faixa de Preço</b></p>
+      </div>
+      <div class="col-md-4">
+        Mínimo R$ <input type="number" [(ngModel)]="minPrice" (ngModelChange)="filter('minPrice', $event)">
+      </div>
+      <div class="col-md-4">
+        Máximo R$ <input type="number" [(ngModel)]="maxPrice" (ngModelChange)="filter('maxPrice', $event)">
+      </div>
+    </div>
+  </div>
+  <hr>
+</div>

@@ -1,0 +1,157 @@
+<div class="row">
+  <div class="row main-image" [ngStyle]="{'background-image': 'url(' + photos[0] + ')'}">
+    <!-- Nosso Modal -->
+    <!-- <app-lightbox [photos] = "photos"></app-lightbox> -->
+  </div>
+  <div class="row">
+    <div class="col-md-8 details">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="row">
+            <div class="col-md-12">
+              <h3>{{ details.name }}</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8">
+              <p>{{ address.city }}, {{ address.country }}</p>
+            </div>
+            <div class="col-md-4 stars">
+              <i class="fa" [ngClass]="{'fa-star': details.rating >= 1, 'fa-star-o': details.rating < 1}"></i>
+              <i class="fa" [ngClass]="{'fa-star': details.rating >= 2, 'fa-star-o': details.rating < 2}"></i>
+              <i class="fa" [ngClass]="{'fa-star': details.rating >= 3, 'fa-star-o': details.rating < 3}"></i>
+              <i class="fa" [ngClass]="{'fa-star': details.rating >= 4, 'fa-star-o': details.rating < 4}"></i>
+              <i class="fa" [ngClass]="{'fa-star': details.rating == 5, 'fa-star-o': details.rating < 5}"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="col-md-3 text-center">
+            <div class="row">
+              <i class="fa fa-home details-icons"></i>
+            </div>
+            <div class="row" [ngSwitch]="details.accommodation_type">
+              <p *ngSwitchCase="'whole_house'">Casa Inteira</p>
+              <p *ngSwitchCase="'whole_bedroom'">Quarto Inteiro</p>
+              <p *ngSwitchCase="'shared_bedroom'">Quarto Compartilhado</p>
+            </div>
+          </div> 
+          <div class="col-md-3 text-center">
+            <div class="row">
+              <i class="fa fa-user-circle details-icons"></i>
+            </div>
+            <div class="row">
+              {{ details.bedroom }} Hóspedes
+            </div>
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="row">
+              <i class="fa fa-bed details-icons"></i>
+            </div>
+            <div class="row">
+              {{ details.beds }} Camas
+            </div>
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="row">
+              <i class="fa fa-group details-icons"></i>
+            </div>
+            <div class="row">
+              {{ details.bedroom }} quartos
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Sobre a propriedade</h3>
+          <p>{{ details.description }}</p>
+        </div>
+        <div class="col-md-12">
+          <h3>Ambiente</h3>
+          <div class="row space-body">
+            <div class="col-md-3">Acomoda até:<b>{{ details.max_guests }}</b></div>
+            <div class="col-md-3">Quartos:<b>{{ details.bedroom }}</b></div>
+            <div class="col-md-3">Tipo de acomodação</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Banheiros:<b>{{ details.bathroom }}</b></div>
+            <div class="col-md-3">Camas:<b>{{ details.bedroom }}</b></div>
+            <div class="col-md-3" [ngSwitch]="details.accommodation_type">
+              <b *ngSwitchCase="'whole_house'">Casa Inteira</b>
+              <b *ngSwitchCase="'whole_bedroom'">Quarto Inteiro</b>
+              <b *ngSwitchCase="'shared_bedroom'">Quarto Compartilhado</b>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <h3>Comodidades</h3>
+          <div class="row space-body">
+            <div class="col-md-3" [ngClass]="{'strike': facilities.wifi != true }">Wifi</div>
+            <div class="col-md-3" [ngClass]="{'strike': facilities.refrigerator != true }">Geladeira</div>
+            <div class="col-md-3" [ngClass]="{'strike': facilities.clothes_iron != true }">Ferro de Passar</div>
+            <div class="col-md-3" [ngClass]="{'strike': facilities.towels != true }">Toalha</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3" [ngClass]="{'strike': facilities.washing_machine != true }">Maq de lavar</div>
+            <div class="col-md-3" [ngClass]="{'strike': facilities.air_conditioning != true }">Ar Condicionado</div>
+            <div class="col-md-3" [ngClass]="{'strike': facilities.heater != true }">Aquecimento</div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-12">
+          <h3 *ngIf="comments.length > 1">{{ comments.length }} Comentários</h3>
+          <h3 *ngIf="comments.length == 1">1 Comentário</h3>
+          <h3 *ngIf="comments.length == 0">Sem comentários ainda</h3>
+          <div class="col-md-10 col-md-offset-1">
+            <div *ngFor="let comment of comments">
+              <app-comment-box [photo]="comment.photo"
+                               [name]="comment.name"
+                               [body]="comment.body"
+                               [date]="comment.date"
+                                ></app-comment-box>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Seu Anfitrião</h3>
+          <div class="row">
+            <div class="col-md-3 col-md-offset-1">
+              <app-user-detail-box  [photo]="profile.photo"
+                                    [name]="profile.name"
+                                    [address]="profile.address"
+                                    [userid]="profile.id"></app-user-detail-box>
+            </div>
+            <div class="col-md-7 col-md-offset-1 send-message-box">
+              <app-send-message></app-send-message>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="col-md-4">
+      <app-reservation-box></app-reservation-box>
+    </div>
+  </div>
+ 
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Localização</h3>
+      <sebm-google-map class="sebm-google-map-container" [latitude]="lat" [longitude]="lng" [zoom]="16">
+        <sebm-google-map-marker
+            [latitude]="lat - 0.003"
+            [longitude]="lng"
+            [label]="Aqui"
+            [iconUrl]="'http://bootcamp.onebitcode.com/wp-content/uploads/2017/01/map_icon.png'">
+        </sebm-google-map-marker>
+      </sebm-google-map>
+    </div>
+  </div>
+</div>

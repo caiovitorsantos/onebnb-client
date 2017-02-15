@@ -1,0 +1,34 @@
+	.main-image{
+		height: 300px;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		background-position: center center;
+	}
+
+	.details{
+		margin-top: 40px;
+
+		.details-icons{
+			font-size: 50px;
+		}
+
+		.stars{
+			font-size: 13px;
+		}
+
+		.space-body{
+			margin-top: 20px;
+		}
+
+		.strike{
+			text-decoration: line-through;
+		}
+
+		.send-message-box{
+			margin-top:  50px;
+		}	
+
+		.sebm-google-map-container{
+			height: 300px !important;
+		}
+	}

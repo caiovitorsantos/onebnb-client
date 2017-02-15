@@ -1,0 +1,29 @@
+<div class="col-md-12 comment">
+  <div class="row">
+    <div class="col-md-3 text-center">
+      <div class="row">
+        <div *ngIf="photo == null || photo == ''">
+          <i class="fa fa-user-circle user-icon"></i>
+        </div>
+        <div *ngIf="photo != null">
+          <div class="profile-picture" [ngStyle]="{'background-image': 'url(' + photo.url + ')'}">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="comment-body">
+        {{ body }}
+      </div>
+    </div>
+  </div>
+ 
+  <div class="row">
+    <div class="col-md-3 text-center comment-space">
+      <b>{{ name }}</b>
+    </div>
+    <div class="col-md-9 comment-space">
+      {{ date }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<div class="pagination" *ngIf="totalItems > 16">
+	<pagination [boundaryLinks]="true" [totalItems]="totalItems" [(ngModel)]="currentPage" class="pagination-sm"  previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;" [itemsPerPage]="18" (pageChanged)="pageChanged($event)">
+		
+	</pagination>
+</div>

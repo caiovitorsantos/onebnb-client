@@ -1,0 +1,47 @@
+@import "src/styles.scss";
+
+
+.property-box{
+  margin-top: 50px;
+  .recommended-title{
+    margin-bottom: 10px;
+  }
+ 
+  .stars{
+    font-size: 10px;
+  }
+ 
+  .property-indication-price
+  {
+    margin-top: 2px;
+    margin-bottom: 2px;
+ 
+    .property-price{
+      font-weight: 600;
+    }
+  }
+ 
+  .property-indication-reviews{
+    padding-left: 0;
+    .reviews-link{
+      font-weight: 600;
+      font-size: 9px;
+      color: $template-color-4;
+    }
+  }
+ 
+  .property-indication-wishlist{
+    .wishlist-btn{
+      border: none;
+      background-color: #fff;
+    }
+    .signed{
+      font-size: 20px;
+      color: $template-color-1;
+    }
+    .unsigned{
+      font-size: 20px;
+      color: $template-color-1;
+    }
+  }
+}

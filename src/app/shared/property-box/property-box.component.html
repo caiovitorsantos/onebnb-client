@@ -1,0 +1,37 @@
+<div class="col-md-4 property-box">
+  <div class="property-indication-image">
+    <a href="/" target="_blank" [routerLink]="['/property', property_id]">
+      <img src="{{ photo }}" class="img-responsive property-box-img">
+    </a>
+  </div>
+  <div class="property-indication-price">
+    <span class="property-price">R${{ price }}</span>
+    <span class="property-title">{{ name }}</span>
+  </div>
+  <div class="property-indication-reviews col-md-6">
+    <div class="reviews-link ">
+      <span class="reviews-link"><a href="/">34 Comentários</a></span>
+    </div>
+    <div class="stars">
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star-half-o"></i>
+    </div>
+  </div>
+  <div class="property-indication-wishlist pull-right">
+    <div class="col-md-12 text-right">
+      <div *ngIf="wishlisted == true">
+        <button (click)="wishlist(false, 1)" class="wishlist-btn">
+          <i class="fa fa-heart signed"></i>
+        </button>
+      </div>
+      <div *ngIf="wishlisted != true">
+        <button href="" (click)="wishlist(true, 1)" class="wishlist-btn">
+          <i class="fa fa-heart-o unsigned"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

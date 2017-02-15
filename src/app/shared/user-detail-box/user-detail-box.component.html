@@ -1,0 +1,26 @@
+<div class="row user-detail-box">
+  <div class="row">
+    <div class="col-md-6 text-center">
+      <div class="row">
+        <div *ngIf="photo == null || photo == ''">
+          <i class="fa fa-user-circle user-icon"></i>
+        </div>
+        <div *ngIf="photo != null">
+          <div class="profile-picture" [ngStyle]="{'background-image': 'url(' + photo.url + ')'}">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <h4>{{ name }}</h4>
+      </div>
+      <div class="row" *ngIf="address != null && address != ''">
+        {{ address.city }}, {{ address.country }}
+      </div>
+      <div class="row">
+        <a href="" [routerLink]="['/user', userid]">Ver Perfil</a>
+      </div>
+    </div>
+  </div>
+</div>
