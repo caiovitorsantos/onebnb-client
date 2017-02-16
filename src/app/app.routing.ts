@@ -19,7 +19,7 @@ const appRoutes: Routes = [
   { path: 'results', component: ResultsComponent },
   { path: 'property/:id', component: PropertyDetailsComponent },
   { path: '404', component: NotFoundComponent },
- 	{path: '**', redirectTo: '/not-found.html'}
+ 	{path: '**', redirectTo: '/404'}
 ];
  
 // Export the constant routing to import them in app.module.ts file

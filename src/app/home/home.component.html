@@ -37,76 +37,13 @@
       <div class="row recommended-title">
         <h4>Recomendados</h4>
       </div>
-      <div class="row">
-        <div class="col-md-4 property-indication-box">
-          <div class="property-indication-image">
-            <a href="/">
-              <img src="http://res.cloudinary.com/dgrvu0qjy/image/upload/v1484321654/anuncio1_c0f8lv.jpg" class="img-responsive">
-            </a>
-          </div>
-          <div class="property-indication-price">
-            <span class="property-price">R$120</span>
-            <span class="property-title">Conforto em Ouro Preto</span>
-          </div>
-          <div class="property-indication-reviews">
-            <div class="col-md-6 text-left stars">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-half-o"></i>
-            </div>
-            <div class="col-md-6 text-left reviews-link text-left">
-              <span class="reviews-link"><a href="/">34 Comentários</a></span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 property-indication-box">
-          <div class="property-indication-image">
-            <a href="/">
-              <img src="http://res.cloudinary.com/dgrvu0qjy/image/upload/v1484321654/anuncio2_xzvqlc.jpg" class="img-responsive">
-            </a>
-          </div>
-          <div class="property-indication-price">
-            <span class="property-price">R$120</span>
-            <span class="property-title">Conforto em Ouro Preto</span>
-          </div>
-          <div class="property-indication-reviews">
-            <div class="col-md-6 text-left stars">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-half-o"></i>
-            </div>
-            <div class="col-md-6 text-left reviews-link text-left">
-              <span class="reviews-link"><a href="/">34 Comentários</a></span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 property-indication-box">
-          <div class="property-indication-image">
-            <a href="/">
-              <img src="http://res.cloudinary.com/dgrvu0qjy/image/upload/v1484321654/anuncio3_r2det2.jpg" class="img-responsive">
-            </a>
-          </div>
-          <div class="property-indication-price">
-            <span class="property-price">R$120</span>
-            <span class="property-title">Conforto em Ouro Preto</span>
-          </div>
-          <div class="property-indication-reviews">
-            <div class="col-md-6 text-left stars">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-half-o"></i>
-            </div>
-            <div class="col-md-6 text-left reviews-link text-left">
-              <span class="reviews-link"><a href="/">34 Comentários</a></span>
-            </div>
-          </div>
-        </div>
+      <div *ngFor="let p of properties">
+        <app-property-box
+          property_id="{{ p.property.id }}" 
+          name="{{ p.property.name }}" 
+          price="{{ p.property.price }}" 
+          photo="{{ p.property.photos[0] }}"
+        ></app-property-box>  
       </div>
     </div>
     <div class="row">

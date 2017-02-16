@@ -13,5 +13,11 @@ export class HomeComponent implements OnInit {
 
   constructor(private propertiesService: PropertiesService) { }
 
-  ngOnInit() { }
+  ngOnInit() { 
+  	this.propertiesService.getHotProperties().subscribe(
+  		data => { this.properties = data; },
+  		error => { console.log(error); }
+  	);
+
+  }
 }

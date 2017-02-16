@@ -32,7 +32,7 @@ export class PropertyDetailsComponent implements OnInit {
             this.comments   = data.property.comments;
             this.profile    = data.property.user;
             this.details    = data.property;
-            this.address    = data.address ;
+            this.address    = data.property.address ;
             this.facilities = data.property.facility;
             this.lat        = +data.property.address.latitude;
             this.lng        = +data.property.address.longitude;

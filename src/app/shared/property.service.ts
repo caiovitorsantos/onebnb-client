@@ -21,10 +21,13 @@ export class PropertiesService {
       .map( res => res.json());
   }
 
-
-
   getProperties(){
     return this.http.get(environment.api_base_url + 'properties.json')
+      .map(res => res.json());
+  }
+
+  getHotProperties(){
+    return this.http.get(environment.api_base_url + 'hot_properties.json')
       .map(res => res.json());
   }
  
