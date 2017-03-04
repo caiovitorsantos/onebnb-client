@@ -1,4 +1,4 @@
-<div class="col-md-4 property-box">
+<div class="property-box">
   <div class="property-indication-image">
     <a href="/" target="_blank" [routerLink]="['/property', property_id]">
       <img src="{{ photo }}" class="img-responsive property-box-img">
@@ -20,15 +20,15 @@
       <i class="fa fa-star-half-o"></i>
     </div>
   </div>
-  <div class="property-indication-wishlist pull-right">
+  <div class="property-indication-wishlist pull-right" *ngIf="wishlisted != null">
     <div class="col-md-12 text-right">
       <div *ngIf="wishlisted == true">
-        <button (click)="wishlist(false, 1)" class="wishlist-btn">
+        <button (click)="wishlist(false, property_id)" class="wishlist-btn">
           <i class="fa fa-heart signed"></i>
         </button>
       </div>
       <div *ngIf="wishlisted != true">
-        <button href="" (click)="wishlist(true, 1)" class="wishlist-btn">
+        <button href="" (click)="wishlist(true, property_id)" class="wishlist-btn">
           <i class="fa fa-heart-o unsigned"></i>
         </button>
       </div>

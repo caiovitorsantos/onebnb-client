@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { PropertiesService } from '../property.service';
+
 @Component({
   selector: 'app-property-box',
   templateUrl: './property-box.component.html',
@@ -7,23 +9,32 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PropertyBoxComponent implements OnInit {
 
-	public wishlisted: boolean = false;
+	@Input() wishlisted: boolean = false;
 
   @Input() photo: string;
-  @Input() name: string;
+  @Input() name:  string;
   @Input() price: string;
   @Input() stars: string;
   @Input() whish: string;
   @Input() property_id: string;
 
-  constructor() { }
+  constructor(private propertiesServices: PropertiesService) { }
 
   ngOnInit() {
   }
 
   wishlist(status, property_id){
-  	console.log(status);
-  	this.wishlisted = status;
+    if(status) {
+      this.propertiesServices.addToWishlst(property_id)
+      .subscribe(data => {
+        this.wishlisted = status;
+      });
+    } else {
+      this.propertiesServices.removeToWishlist(property_id)
+      .subscribe(data =>{
+        this.wishlisted = status;
+      });
+    }
   }
 
 }
