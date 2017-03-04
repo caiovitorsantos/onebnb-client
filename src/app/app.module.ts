@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Angular2TokenService, A2tUiModule } from 'angular2-token';
-import { CarouselModule, DropdownModule, AlertModule, ButtonsModule, DatepickerModule, CollapseModule, ModalModule, PaginationModule} from "ng2-bootstrap/ng2-bootstrap"; 
+import { TypeaheadModule, CarouselModule, DropdownModule, AlertModule, ButtonsModule, DatepickerModule, CollapseModule, ModalModule, PaginationModule} from "ng2-bootstrap/ng2-bootstrap"; 
 import { AgmCoreModule } from 'angular2-google-maps/core';
+
  
 import { routing } from './app.routing';
  
@@ -30,7 +31,8 @@ import { CommentBoxComponent } from './shared/comment-box/comment-box.component'
 import { UserDetailBoxComponent } from './shared/user-detail-box/user-detail-box.component';
 import { SendMessageComponent } from './shared/send-message/send-message.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-
+import { UsersService } from './shared/users.service';
+import { ReservationService } from './shared/reservation.service'
  
 @NgModule({
   declarations: [
@@ -67,11 +69,12 @@ import { NotFoundComponent } from './not-found/not-found.component';
     PaginationModule.forRoot(),
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
+    TypeaheadModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBw8wZUJYoT0D8uR45I9qERTICVwJDe3ro'
     })
   ],
-  providers: [PropertiesService, Angular2TokenService],
+  providers: [PropertiesService, UsersService, ReservationService, Angular2TokenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
