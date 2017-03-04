@@ -1,8 +1,10 @@
 import { Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Angular2TokenService, A2tUiModule } from 'angular2-token';
 
 import { Property } from '../shared/property';
 import { PropertiesService } from '../shared/property.service';
+import { UsersService } from '../shared/users.service';
 
 @Component({
   selector: 'app-results',
@@ -17,9 +19,9 @@ export class ResultsComponent implements OnInit {
 
   private lat: number = -13.4963582;
   private lng: number = -69.8079044;
+  private wishlist: any;
 
-
-  constructor(private PropertiesService: PropertiesService, private route: ActivatedRoute) { }
+  constructor(private PropertiesService: PropertiesService, private route: ActivatedRoute, private usersService: UsersService, private _tokenService:  Angular2TokenService) { }
 
   ngOnInit() {
   
@@ -36,6 +38,20 @@ export class ResultsComponent implements OnInit {
             this.formateToMap();
           });
   	  });  
+
+      if(this._tokenService.userSignedIn()) {
+        this.usersService.getWishlist()
+        .subscribe(data => { this.wishlist = data });
+      }
+  }
+
+  wishlisted(id){
+    if(this.wishlist) {
+      for (var i = 0 ; i < this.wishlist.length ; i++) {
+        if(this.wishlist[i]['property']['id'] == id){ return  true }
+      }
+    return false;
+    }
   }
 
   // After get the properties array of the API, we need formate them inside of mapPin object to be displayed

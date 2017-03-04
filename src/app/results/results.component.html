@@ -5,12 +5,16 @@
     </div>
     <div class="row">
         <div *ngFor="let p of properties">
-          <app-property-box
-            property_id="{{p.property.id}}"
-            name="{{p.property.name}}"
-            price="{{ p.property.price }}"
-            photo="{{ p.property.photos[0] }}"
-          ></app-property-box>
+          <div class="col-md-4 property-box">
+            <app-property-box
+              property_id="{{p.property.id}}"
+              name="{{p.property.name}}"
+              price="{{ p.property.price }}"
+              photo="{{ p.property.photos[0] }}"
+              [wishlisted] = "wishlisted(p.property.id)"
+   
+            ></app-property-box>
+          </div>
         </div>
     </div>
     <div class="row">
