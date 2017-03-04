@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, URLSearchParams } from '@angular/http';
- 
+import { Angular2TokenService, A2tUiModule } from 'angular2-token';
+
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
@@ -9,9 +10,25 @@ import { environment } from '../../environments/environment';
  
 @Injectable()
 export class PropertiesService {
-  // private url: string = "http://localhost:3000/api/v1/properties.json";
- 
-  constructor(private http: Http) { }
+  // private url: string = "http://localhost:3000/api/v1/";
+
+  constructor(private http: Http, private _tokenService: Angular2TokenService) { }
+
+
+  addToWishlst(id){
+    return this._tokenService.post(/*environment.api_base_url +*/ "properties/" + id + "/wishlist",{})
+    .map(res => res.json());
+  }
+
+  removeToWishlist(id){
+    return this._tokenService.delete(/*environment.api_base_url +*/ "properties/" + id + "/wishlist")
+    .map(res => res.json())
+  }
+
+  autocomplete(){
+    return this.http.get(environment.api_base_url + 'autocomplete.json')
+    .map(res => res.json());
+  }
   
   searchProperties(params){
     let parameters = new URLSearchParams();
