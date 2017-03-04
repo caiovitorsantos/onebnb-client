@@ -16,12 +16,12 @@ export class PropertiesService {
 
 
   addToWishlst(id){
-    return this._tokenService.post(/*environment.api_base_url +*/ "properties/" + id + "/wishlist",{})
+    return this._tokenService.post("properties/" + id + "/wishlist",{})
     .map(res => res.json());
   }
 
   removeToWishlist(id){
-    return this._tokenService.delete(/*environment.api_base_url +*/ "properties/" + id + "/wishlist")
+    return this._tokenService.delete("properties/" + id + "/wishlist")
     .map(res => res.json())
   }
 
